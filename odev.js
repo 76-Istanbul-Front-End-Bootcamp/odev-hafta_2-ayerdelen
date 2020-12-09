@@ -10,8 +10,7 @@ var person = {
   }
 }
 
-var messageFunc = person.message
-messageFunc();
+person.message();
 
 
 /*  
@@ -58,8 +57,17 @@ function isValidName(name){
   Ornek: katilimSaati("3", 20) 60 sonucunu vermelidir.
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
-function katilimSaati(dersSayisi, dersSuresi){
 
+function katilimSaati(dersSayisi, dersSuresi) {
+ var dersSayisiCevir = Number(dersSayisi);
+  var dersSaatiCevir = Number(dersSuresi);
+  if (isNaN(dersSayisiCevir) || isNaN(dersSaatiCevir)) {
+    throw 'Parameter is not a number!';
+  }
+else {var sonuc = dersSayisiCevir * dersSaatiCevir;
+    return sonuc;}
 }
+
+katilimSaati("2", 30)
 
 
