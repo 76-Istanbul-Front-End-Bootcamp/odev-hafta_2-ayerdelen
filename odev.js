@@ -3,6 +3,14 @@
   Asagidaki fonksiyonu "Hello, John ciktisi verecek sekilde duzenleyiniz."
  */
 
+/*var person = {
+  name: "John",
+  message: function () {    
+    console.log("Hello, " + this.name)
+  }
+}
+
+person.message();*/
 var person = {
   name: "John",
   message: function () {    
@@ -10,7 +18,9 @@ var person = {
   }
 }
 
-person.message();
+var messageFunc = person.message.bind(person)
+messageFunc();
+
 
 
 /*  
