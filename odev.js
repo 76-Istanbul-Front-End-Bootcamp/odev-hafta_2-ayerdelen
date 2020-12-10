@@ -68,16 +68,23 @@ function isValidName(name){
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
 
-function katilimSaati(dersSayisi, dersSuresi) {
- var dersSayisiCevir = Number(dersSayisi);
-  var dersSaatiCevir = Number(dersSuresi);
-  if (isNaN(dersSayisiCevir) || isNaN(dersSaatiCevir)) {
-    throw 'Parameter is not a number!';
+function katilimSaati(dersSayisi, dersSuresi){
+  var derSayisiCevir = parseInt(String(dersSayisi))
+  var dersSuresiCevir = parseInt(String(dersSuresi))
+  if(isNaN(derSayisiCevir) || isNaN(dersSuresiCevir)) {
+ console.log("Girdiğiniz parametre yanlış")
+  return false;
   }
-else {var sonuc = dersSayisiCevir * dersSaatiCevir;
-    return sonuc;}
+  else{
+    var sonuc = derSayisiCevir * dersSuresiCevir;
+    console.log(sonuc)
+    return true;
+  }
 }
-
-katilimSaati("2", 30)
-
-
+console.log(katilimSaati(10,"6") === false);
+console.log(katilimSaati("10",6) === false);
+console.log(katilimSaati("10","6") === false);
+console.log(katilimSaati("",6) === false);
+console.log(katilimSaati(6,"") === false);
+console.log(katilimSaati("","") === false);
+console.log(katilimSaati("foo",6) === false);
