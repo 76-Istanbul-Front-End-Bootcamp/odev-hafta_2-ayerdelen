@@ -51,9 +51,35 @@ numbers.multiply();
   Ornek : isValidName("John") true donmeli
   Ornek : isValidName(" J ohn") false donmeli
 */
+
 function isValidName(name){
 
+if(typeof(name)===typeof("string")){
+var trimmedA = name.trim();
+var divideBySpaces = trimmedA.split(" ");
+for(var i = 0; i<= divideBySpaces.length; i++){
+  if(divideBySpaces[i].length<=1){
+    return false
+
+  }
+  else {
+    return true;
+  }
+  }
+ 
+} else {
+    console.log("Adınızı kontrol ediniz")
+    return false;
+  }
 }
+console.log(isValidName("Frank") === true);
+console.log(isValidName(false) === false);
+console.log(isValidName(null) === false);
+console.log(isValidName(undefined) === false);
+console.log(isValidName("") === false);
+console.log(isValidName("  \t\n") === false);
+console.log(isValidName("X") === false);
+
 
 /*
   Odev 4:
